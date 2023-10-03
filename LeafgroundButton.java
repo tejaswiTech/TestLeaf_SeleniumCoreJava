@@ -15,38 +15,34 @@ public class LeafgroundButton {
 		//Maximized the browser
 		driver.manage().window().maximize();
 		
-//		- Click on the button with the text ‘Click and Confirm title using XPath
+//		- Click on the button with the text â€˜Click and Confirm title using XPath
 		driver.findElement(By.xpath("//h5[text()='Click and Confirm title.']//following-sibling::button/span[text()='Click']")).click();
 		
-//		- Verify that the title of the page is ‘dashboard.
-		String title=driver.findElement(By.xpath("//div[@class='route-bar-breadcrumb']")).getText();
-		if(title.contains("Dashboard"))
-		System.out.println("Title contains: Dashboard");
+//		- Verify that the title of the page is â€˜dashboard.
+		System.out.println(driver.getTitle());
 		
-//		- Check if the button with the text ‘Confirm if the button is disabled’ is disabled.
+//		- Check if the button with the text â€˜Confirm if the button is disabledâ€™ is disabled.
 		driver.navigate().back();
 		boolean isEnabled = driver.findElement(By.xpath("//h5[text()='Confirm if the button is disabled.']//following-sibling::button")).isEnabled();
 		if(!isEnabled)
 		System.out.println("'Confirm if the button is disabled.' button is Disabled");
 		
-//		- Find and print the position of the button with the text ‘Submit.’
+//		- Find and print the position of the button with the text â€˜Submit.â€™
 		String submitPosition=driver.findElement(By.id("j_idt88:j_idt94")).getLocation().toString();
 		System.out.println("Submit button position is: "+submitPosition);
 
 		
-//		- Find and print the background color of the button with the text ‘Find the Save button color.
+//		- Find and print the background color of the button with the text â€˜Find the Save button color.
 		Color findbtnColor=Color.fromString(driver.findElement(By.id("j_idt88:j_idt96")).getCssValue("color"));
 		System.out.println("'Find the Save button color'"+ " button color is: "+findbtnColor);
 		
-//		- Find and print the height and width of the button with the text ‘Find the height and width of this button.
+//		- Find and print the height and width of the button with the text â€˜Find the height and width of this button.
 		int btnHeight= driver.findElement(By.id("j_idt88:j_idt98")).getSize().getHeight();
 		int btnWidth= driver.findElement(By.id("j_idt88:j_idt98")).getSize().getWidth();
-		System.out.println("‘Find the height and width of this button."+" button height is "+btnHeight+" width is "+btnWidth);
+		System.out.println("â€˜Find the height and width of this button."+" button height is "+btnHeight+" width is "+btnWidth);
 		
 		
 //		- Close the browser window.
 	    driver.close();	
-
 	}
-
 }
